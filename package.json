@@ -1,0 +1,29 @@
+{
+  "name": "react-native-back-android",
+  "version": "1.0.0",
+  "description": "A Higher-order Component for handling back button press on React Native Android",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeJerry/react-native-back-android.git"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "back",
+    "backAndroid"
+  ],
+  "author": "AwesomeJerry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AwesomeJerry/react-native-back-android/issues"
+  },
+  "homepage": "https://github.com/AwesomeJerry/react-native-back-android#readme",
+  "peerDependencies": {
+    "react": "^15.0.2",
+    "react-native": "^0.24.0"
+  }
+}
