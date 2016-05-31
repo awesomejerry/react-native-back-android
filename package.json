@@ -4,7 +4,8 @@
   "description": "A Higher-order Component for handling back button press on React Native Android",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive src/test/*.js"
+    "test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive src/test/*.js",
+    "2npm": "publish"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "chai": "^3.5.0",
     "enzyme": "^2.3.0",
     "mocha": "^2.5.3",
+    "publish": "^0.6.0",
     "react": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
     "react-dom": "^15.0.2",

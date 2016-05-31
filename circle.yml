@@ -7,3 +7,11 @@ dependencies:
     - npm install react-native@0.26.2 react@15.0.2
   override:
     - npm install --only=dev
+
+deployment:
+  npm:
+    branch: master
+    commands:
+      # login using environment variables
+      - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
+      - npm run 2npm
