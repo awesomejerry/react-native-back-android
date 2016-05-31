@@ -6,34 +6,32 @@ import isAndroid from '../utils/isAndroid.js';
 
 export default function hardwareBackPress(MyComponent) {
   if (isAndroid()) {
-    class EnhancedComponent extends Component {
+    return class EnhancedComponent extends MyComponent {
       static contextTypes = {
         backAndroid: PropTypes.object,
       };
       componentDidMount() {
         const { backAndroid } = this.context;
-        const { handleHardwareBackPress } = this.refs.child;
-        if (handleHardwareBackPress) {
-          backAndroid.onHardwareBackPress(handleHardwareBackPress);
+        if (this.handleHardwareBackPress) {
+          backAndroid.onHardwareBackPress(this.handleHardwareBackPress);
+        }
+        if (super.componentDidMount) {
+          super.componentDidMount();
         }
       }
       componentWillUnmount() {
         const { backAndroid } = this.context;
-        const { handleHardwareBackPress } = this.refs.child;
-        if (handleHardwareBackPress) {
-          backAndroid.offHardwareBackPress(handleHardwareBackPress);
+        if (this.handleHardwareBackPress) {
+          backAndroid.offHardwareBackPress(this.handleHardwareBackPress);
+        }
+        if (super.componentWillUnmount) {
+          super.componentWillUnmount();
         }
       }
       render() {
-        return (
-          <MyComponent
-            ref="child"
-            {...this.props}
-          />
-        );
+        return super.render();
       }
     }
-    return EnhancedComponent;
   }
   return MyComponent;
 }
