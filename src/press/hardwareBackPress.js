@@ -9,6 +9,7 @@ export default function hardwareBackPress(MyComponent) {
     return class EnhancedComponent extends MyComponent {
       static contextTypes = {
         backAndroid: PropTypes.object,
+        ...MyComponent.contextTypes,
       };
       componentDidMount() {
         const { backAndroid } = this.context;
