@@ -12,11 +12,11 @@ const handler = {
   offHardwareBackPress(callback) {
     const index = this._callbacks.indexOf(callback);
     if (index !== -1) {
-      this._callbacks.splice(index, -1);
+      this._callbacks.splice(index, 1);
     }
   },
 };
-export default function backAndroid(MyComponent) {
+export default function backAndroid(MyComponent, shouldExit = false) {
   if (isAndroid()) {
     class EnhancedComponent extends Component {
       static propTypes = {
@@ -37,27 +37,27 @@ export default function backAndroid(MyComponent) {
         BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButtonPress);
       }
       handleBackButtonPress = () => {
-        // should back button press go back navigator
-        let preventDefault = false;
+        // has already been captured by some component
+        let beenCaptured = false;
 
         for (const i in handler._callbacks) {
           if (handler._callbacks.hasOwnProperty(i)) {
             const callback = handler._callbacks[i];
             const result = callback.call();
-            // if any callbacks return true, prevent default
+            // if any callbacks return true, it means that back press event is captured
             if (result) {
-              preventDefault = true;
+              beenCaptured = true;
               break;
             }
           }
         }
 
-        if (!preventDefault) {
-          if (this.props.goBack) {
-            this.props.goBack();
-          }
+        // return true to prevent exiting app
+        if (beenCaptured) {
+          return true;
         }
-        return true;
+
+        return shouldExit;
       };
       render() {
         return (
