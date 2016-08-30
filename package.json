@@ -24,19 +24,19 @@
   },
   "homepage": "https://github.com/AwesomeJerry/react-native-back-android#readme",
   "peerDependencies": {
-    "react": "^15.1.0",
-    "react-native": "^0.27.2"
+    "react": "15.1.0",
+    "react-native": "0.27.2"
   },
   "devDependencies": {
-    "babel-core": "^6.9.1",
-    "babel-preset-react-native": "^1.9.0",
-    "chai": "^3.5.0",
-    "enzyme": "^2.3.0",
-    "mocha": "^2.5.3",
-    "publish": "^0.6.0",
-    "react": "^15.1.0",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-native-mock": "^0.2.2"
+    "babel-core": "6.9.1",
+    "babel-preset-react-native": "1.9.0",
+    "chai": "3.5.0",
+    "enzyme": "2.3.0",
+    "mocha": "2.5.3",
+    "publish": "0.6.0",
+    "react": "15.1.0",
+    "react-addons-test-utils": "15.1.0",
+    "react-dom": "15.1.0",
+    "react-native-mock": "0.2.2"
   }
 }
