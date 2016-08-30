@@ -1,3 +1,5 @@
+[![NPM](https://nodei.co/npm/react-native-back-android.png)](https://npmjs.org/package/react-native-back-android)
+
 # react-native-back-android
 A Higher-order Component for handling back button press on React Native Android
 
