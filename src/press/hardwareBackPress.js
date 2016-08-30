@@ -15,7 +15,6 @@ export default function hardwareBackPress(MyComponent, statelessHandler) {
       };
       componentDidMount() {
         const { backAndroid } = this.context;
-        console.log(MyComponent);
         if (statelessHandler) {
           backAndroid.onHardwareBackPress(this.handleStatelessHandler);
         } else if (this.refs.component.handleHardwareBackPress) {

@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   pre:
-    - npm install react-native@0.26.2 react@15.0.2
+    - npm install react-native@0.27.2 react@15.1.0
   override:
     - npm install --only=dev
 
