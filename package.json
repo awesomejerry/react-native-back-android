@@ -1,11 +1,24 @@
 {
   "name": "react-native-back-android",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "A Higher-order Component for handling back button press on React Native Android",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive src/test/*.js",
+    "test": "jest",
+    "test-update": "npm run test -- --updateSnapshot",
+    "lint-staged": "lint-staged",
+    "lint": "standard 'src/**/*.js'",
     "2npm": "publish"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "parser": "babel-eslint"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": "lint"
   },
   "repository": {
     "type": "git",
@@ -24,19 +37,21 @@
   },
   "homepage": "https://github.com/AwesomeJerry/react-native-back-android#readme",
   "peerDependencies": {
-    "react": "15.0.2",
-    "react-native": "0.26.2"
+    "react": "^16.0.0-alpha.6",
+    "react-native": "^0.44.2"
   },
   "devDependencies": {
-    "babel-core": "6.9.1",
-    "babel-preset-react-native": "1.9.0",
-    "chai": "3.5.0",
-    "enzyme": "2.3.0",
-    "mocha": "2.5.3",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "20.0.3",
+    "babel-preset-react-native": "1.9.2",
+    "jest": "20.0.4",
+    "lint-staged": "^3.5.0",
+    "pre-commit": "^1.2.2",
     "publish": "0.6.0",
-    "react": "15.0.2",
-    "react-addons-test-utils": "15.0.2",
-    "react-dom": "15.0.2",
-    "react-native-mock": "0.2.2"
+    "react-test-renderer": "16.0.0-alpha.6",
+    "standard": "^10.0.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
   }
 }

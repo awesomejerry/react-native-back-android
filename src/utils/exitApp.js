@@ -1,3 +1,3 @@
-import { BackAndroid } from 'react-native';
+import { BackHandler } from 'react-native'
 
-export default BackAndroid.exitApp;
+export default BackHandler.exitApp

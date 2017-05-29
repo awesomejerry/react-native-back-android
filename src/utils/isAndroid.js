@@ -1,5 +1,5 @@
-import { Platform } from 'react-native';
+import { Platform } from 'react-native'
 
-export default function isAndroid() {
-  return Platform.OS === 'android';
+export default function isAndroid () {
+  return Platform.OS === 'android'
 }
