@@ -5,7 +5,7 @@ import isAndroid from '../utils/isAndroid.js'
 
 export default function hardwareBackPress (MyComponent, statelessHandler) {
   if (isAndroid()) {
-    return class EnhancedComponent extends Component {
+    class EnhancedComponent extends Component {
       static contextTypes = {
         backAndroid: PropTypes.object
       };
@@ -44,6 +44,8 @@ export default function hardwareBackPress (MyComponent, statelessHandler) {
         )
       }
     }
+    EnhancedComponent.navigationOptions = MyComponent.navigationOptions;
+    return EnhancedComponent;
   }
   return MyComponent
 }
