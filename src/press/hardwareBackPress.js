@@ -1,5 +1,6 @@
 // core
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 // utils
 import isAndroid from '../utils/isAndroid.js'
 
@@ -44,8 +45,8 @@ export default function hardwareBackPress (MyComponent, statelessHandler) {
         )
       }
     }
-    EnhancedComponent.navigationOptions = MyComponent.navigationOptions;
-    return EnhancedComponent;
+    EnhancedComponent.navigationOptions = MyComponent.navigationOptions
+    return EnhancedComponent
   }
   return MyComponent
 }
